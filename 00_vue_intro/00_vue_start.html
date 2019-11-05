@@ -13,6 +13,7 @@
     <!-- 형식 그대로 표현됨 -->
     <!-- {{ message }} -->
     <!-- Vue 함수를 위한 껍데기 -->
+    <!-- <div id="app" v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"> -->
     <div id="app">
         {{ message }} - {{ count }}
         <!-- eventListner -->
@@ -34,6 +35,8 @@
       data: {
         message: 'Hello, Vue!',
         count: 0,
+        // activeColor: 'red',
+        // fontSize: 30,
       },
       // object start 
       methods: {
