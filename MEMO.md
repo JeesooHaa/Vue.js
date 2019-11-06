@@ -34,3 +34,32 @@ localStorage.getItem('object') // "[object Object]"
 localStorage.setItem('object', JSON.stringify({ message: '안녕하세요' }))
 localStorage.getItem('object') // "{"message":"안녕하세요"}"
 JSON.parse(localStorage.getItem('object')) // {message: "안녕하세요"}
+
+
+javascript array length 
+.splice / .indexOf 
+
+반복을 지양하라
+component 
+케밥케이스 / 파스칼케이스는 거른다. 안되는게 있어서 
+
+
+webpack 
+node.js 에서..
+
+src 폴더 : 소스코드가 담겨짐
+main.js : entry point 로 사용 
+
+createElement => h
+
+component 파일 구조 ; templata, script, style 
+
+webpack 이 build 를 해준다...
+
+npm run build
+
+public 폴더에 app.js 를 사용하는 html 페이지를 만든다 
+
+수정이 일어나면 다시 빌드업해야함 
+
+production 모드라 f12 vue extension 을 지워하지 않는다 
