@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- 도움되는 콘솔 경고를 포함한 개발 버전 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- Axios -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- jQuery -->
+  <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  <title>Dogs</title>
+</head>
+<body>
+  <div id="app">
+    <select id="numbers" v-model="selectNumber">
+      <option v-for="number in numbers" v-bind:key="number" v-bind:value="number">
+        {{ number }}
+      </option>
+    </select>
+    <button v-on:click="getDogImages">Get {{ selectNumber }} Dogs!</button>
+    <div v-for="dogImage in dogImages" v-bind:key="dogImage">
+      <img v-bind:src="dogImage" alt="멍멍" />
+    </div>
+  </div>
+
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+        selectNumber: null, 
+        dogImages: [],
+      },
+      methods: {
+        getDogImages: async function() {
+          // this. 잊지말것
+          const API_URL = `https://dog.ceo/api/breeds/image/random/${this.selectNumber}`
+          const response = await axios.get(API_URL)
+          this.dogImages = response.data.message
+          console.log(dogImages)
+        },
+      },
+    })
+  </script>
+</body>
+</html>
